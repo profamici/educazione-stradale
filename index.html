@@ -1,0 +1,433 @@
+
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Educazione civica — Diritti e doveri sulla strada</title>
+  <meta name="description" content="Consegna per la classe seconda SSPG: crea un'infografica su diritti e doveri della strada + esempio svolto." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#e9ecf5;
+      --muted:#b9c0d9;
+      --accent:#7dd3fc;
+      --accent2:#a7f3d0;
+      --warn:#fbbf24;
+      --bad:#fb7185;
+      --good:#34d399;
+      --line:rgba(233,236,245,.12);
+      --shadow: 0 12px 32px rgba(0,0,0,.35);
+      --radius:18px;
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(125,211,252,.18), transparent 60%),
+                  radial-gradient(1000px 700px at 80% 30%, rgba(167,243,208,.14), transparent 55%),
+                  radial-gradient(900px 600px at 60% 90%, rgba(251,191,36,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:var(--accent)}
+    a:hover{opacity:.9}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+
+    header{
+      padding:22px 18px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(18,26,51,.85), rgba(18,26,51,.55));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    header:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(700px 300px at 20% 0%, rgba(125,211,252,.20), transparent 55%),
+                  radial-gradient(700px 300px at 80% 20%, rgba(167,243,208,.16), transparent 55%);
+      pointer-events:none;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-weight:700;
+      letter-spacing:.2px;
+      color:var(--muted);
+      text-transform:uppercase;
+      font-size:.86rem;
+      position:relative;
+      z-index:1;
+    }
+
+    h1{
+      margin:10px 0 8px;
+      font-size: clamp(1.7rem, 1.2rem + 2.1vw, 2.7rem);
+      line-height:1.15;
+      position:relative;
+      z-index:1;
+    }
+
+    .subtitle{
+      margin:0;
+      max-width:72ch;
+      color:var(--muted);
+      position:relative;
+      z-index:1;
+    }
+
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; position:relative; z-index:1;}
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(11,16,32,.35);
+      color:var(--text);
+      font-weight:600;
+      font-size:.92rem;
+    }
+
+    nav{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      position:relative;
+      z-index:1;
+    }
+
+    nav a{
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(11,16,32,.35);
+      color:var(--text);
+      font-weight:700;
+    }
+
+    nav a:hover{transform:translateY(-1px)}
+
+    main{margin-top:18px; display:grid; gap:16px}
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(18,26,51,.62);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+
+    .card h2{margin:0 0 10px; font-size:1.35rem}
+    .card h3{margin:14px 0 8px; font-size:1.08rem; color:var(--accent)}
+    .muted{color:var(--muted)}
+
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    @media (min-width: 840px){
+      .grid2{grid-template-columns: 1.1fr .9fr}
+    }
+
+    .callout{
+      border-left:4px solid var(--accent);
+      padding:12px 12px;
+      background:rgba(125,211,252,.10);
+      border-radius:12px;
+    }
+
+    .list{
+      margin:10px 0 0;
+      padding-left:18px;
+    }
+
+    .list li{margin:6px 0}
+
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .pill{
+      border:1px dashed var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background:rgba(11,16,32,.28);
+      min-width: 200px;
+      flex: 1;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight:800;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(11,16,32,.35);
+      font-size:.9rem;
+    }
+    .badge.good{color:var(--good)}
+    .badge.bad{color:var(--bad)}
+    .badge.warn{color:var(--warn)}
+
+    .rules{display:grid; gap:10px; margin-top:10px}
+
+    .rule{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 12px;
+      background:rgba(11,16,32,.30);
+    }
+
+    .rule strong{display:block; margin-bottom:4px}
+
+    .twoCols{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    @media (min-width: 840px){
+      .twoCols{grid-template-columns:1fr 1fr}
+    }
+
+    .foot{
+      margin-top:16px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .printbtn{
+      cursor:pointer;
+      border:1px solid var(--line);
+      background:rgba(11,16,32,.35);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:800;
+    }
+
+    .printbtn:hover{transform:translateY(-1px)}
+
+    /* Accessibilità: focus visibile */
+    :focus-visible{outline:3px solid rgba(125,211,252,.7); outline-offset:3px; border-radius:10px}
+
+    /* Stampa */
+    @media print{
+      body{background:white; color:black}
+      header, .card{box-shadow:none}
+      header{border:1px solid #ddd}
+      .card{border:1px solid #ddd; background:white}
+      nav, .printbtn{display:none !important}
+      a{color:black; text-decoration:underline}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header id="top">
+      <div class="kicker">📘 Educazione civica • Classe seconda SSPG</div>
+      <h1>Diritti e doveri sulla strada<br><span class="muted">Consegna: crea un’infografica</span></h1>
+      <p class="subtitle">
+        Useremo l’inserto di Educazione civica e la mini-verifica (Vero/Falso) per realizzare una grafica chiara e utile:
+        poche parole, simboli, immagini e regole corrette.
+      </p>
+
+      <div class="chips" aria-label="Informazioni rapide">
+        <div class="chip">⏱️ Tempo: 1 ora (classe) + rifinitura</div>
+        <div class="chip">🗂️ Prodotto: 1 pagina (A4/A3 o digitale)</div>
+        <div class="chip">🎯 Focus: sicurezza + rispetto regole</div>
+      </div>
+
+      <nav aria-label="Navigazione pagina">
+        <a href="#consegna">Consegna</a>
+        <a href="#modello">Modello</a>
+        <a href="#esempio">Esempio svolto</a>
+        <a href="#valutazione">Valutazione</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card" id="consegna">
+        <div class="grid2">
+          <div>
+            <h2>1) Consegna</h2>
+            <p>
+              Realizza una <strong>grafica/infografica</strong> destinata a ragazzi della tua età che spieghi
+              <strong>diritti e doveri sulla strada</strong>. Scegli <strong>una sola categoria</strong> e costruisci un messaggio
+              chiaro, corretto e visivo.
+            </p>
+
+            <div class="callout" role="note">
+              <strong>Suggerimento:</strong> usa la mini-verifica Vero/Falso come guida:
+              una frase <strong>vera</strong> può diventare una regola ✔️; una frase <strong>falsa</strong> diventa un avviso ❌.
+            </div>
+
+            <h3>Scegli una categoria</h3>
+            <div class="pillrow" aria-label="Categorie">
+              <div class="pill">🚶 <strong>Pedone</strong><br><span class="muted">Attraversamenti, marciapiedi, attenzione</span></div>
+              <div class="pill">🚲 <strong>Bicicletta</strong><br><span class="muted">Segnali, sicurezza, comportamento</span></div>
+              <div class="pill">🛴 <strong>Monopattino elettrico</strong><br><span class="muted">Regole, visibilità, prudenza</span></div>
+              <div class="pill">🛵 <strong>Ciclomotore</strong><br><span class="muted">Casco, precedenze, responsabilità</span></div>
+            </div>
+          </div>
+
+          <div>
+            <h2>2) Formato</h2>
+            <ul class="list">
+              <li><strong>Cartaceo</strong>: foglio A4 o A3 (disegno a mano, pennarelli, collage).</li>
+              <li><strong>Digitale</strong>: una pagina (Canva, Presentazioni, PowerPoint, ecc.).</li>
+            </ul>
+
+            <h3>Contenuti obbligatori</h3>
+            <ul class="list">
+              <li><strong>Titolo</strong> chiaro e pertinente.</li>
+              <li><strong>Almeno 5 regole</strong> (soprattutto doveri; 1–2 diritti).</li>
+              <li>Simboli: ✔️ (corretto) e ❌ (vietato).</li>
+              <li><strong>Immagini o icone</strong> che aiutano a capire.</li>
+              <li>Testi <strong>brevi e leggibili</strong>, con parole tue.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="modello">
+        <h2>3) Modello base di infografica (struttura consigliata)</h2>
+        <p class="muted">Usa questa scaletta per organizzare la tua pagina: ti aiuta a essere chiaro e completo.</p>
+
+        <div class="rules" aria-label="Struttura">
+          <div class="rule"><strong>1. Titolo</strong> (es. “In bicicletta: diritti e doveri sulla strada”)</div>
+          <div class="rule"><strong>2. Chi sono?</strong> (spuntare una categoria + 1 frase)</div>
+          <div class="rule"><strong>3. Cosa devo fare ✔️</strong> (almeno 3 regole brevi)</div>
+          <div class="rule"><strong>4. Cosa NON devo fare ❌</strong> (almeno 2 regole brevi)</div>
+          <div class="rule"><strong>5. I miei diritti ⚖️</strong> (1–2 punti)</div>
+          <div class="rule"><strong>6. Attenzione! 🚨</strong> (una regola fondamentale)</div>
+          <div class="rule"><strong>7. Messaggio finale</strong> (1 frase: “Rispettare le regole significa…”)</div>
+          <div class="rule"><strong>8. Firma</strong> (nome, classe, data)</div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          Consiglio grafico: usa colori diversi per le sezioni, lascia spazio bianco, e preferisci frasi corte.
+        </p>
+      </section>
+
+      <section class="card" id="esempio">
+        <h2>4) Esempio svolto (categoria: Bicicletta 🚲)</h2>
+        <p class="muted">Questo è un esempio per capire <em>come</em> scrivere: non va copiato identico.</p>
+
+        <div class="twoCols">
+          <div class="rule">
+            <span class="badge good">✔️ COSA DEVO FARE (DOVERI)</span>
+            <div class="rules">
+              <div class="rule"><strong>Rispetto segnali e semafori</strong> come tutti gli altri sulla strada.</div>
+              <div class="rule"><strong>Do la precedenza</strong> quando è richiesta (incroci e attraversamenti).</div>
+              <div class="rule"><strong>Segnalo le svolte</strong> in anticipo (quando possibile, con il braccio).</div>
+              <div class="rule"><strong>Guido con attenzione</strong>: mani sul manubrio e occhi sulla strada.</div>
+              <div class="rule"><strong>Sto in modo sicuro</strong>: quando serve, procedo in fila indiana per non intralciare.</div>
+            </div>
+          </div>
+
+          <div class="rule">
+            <span class="badge bad">❌ COSA NON DEVO FARE (DIVIETI)</span>
+            <div class="rules">
+              <div class="rule"><strong>Non mi distraggo</strong> con cellulare o cuffie se mi impediscono di sentire/vedere bene.</div>
+              <div class="rule"><strong>Non traino e non mi faccio trainare</strong> da altri veicoli.</div>
+            </div>
+
+            <div style="height:10px"></div>
+
+            <span class="badge warn">⚖️ I MIEI DIRITTI</span>
+            <div class="rules">
+              <div class="rule"><strong>Essere rispettato</strong> dagli altri utenti della strada e muovermi in sicurezza.</div>
+              <div class="rule"><strong>Usare spazi dedicati</strong> (piste/corsie ciclabili) quando presenti.</div>
+            </div>
+
+            <div style="height:10px"></div>
+
+            <span class="badge warn">🚨 ATTENZIONE!</span>
+            <div class="rule"><strong>Essere visibile</strong> è fondamentale: prudenza e attenzione soprattutto al buio.</div>
+
+            <div style="height:10px"></div>
+
+            <div class="callout">
+              <strong>Messaggio finale:</strong> “Se rispetto le regole, proteggo me stesso e gli altri.”
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="valutazione">
+        <h2>5) Valutazione</h2>
+        <p>La tua infografica sarà valutata in base a questi criteri:</p>
+        <ul class="list">
+          <li><strong>Correttezza</strong> delle regole (coerenti con l’inserto).</li>
+          <li><strong>Chiarezza</strong> (si capisce subito?).</li>
+          <li><strong>Organizzazione grafica</strong> (titoli, spazi, ordine).</li>
+          <li><strong>Efficacia visiva</strong> (icone/immagini utili, non decorative).</li>
+          <li><strong>Cura e completezza</strong> (tutto presente, lavoro pulito).</li>
+        </ul>
+
+        <div class="foot">
+          <div>📌 Suggerimento: prima di consegnare, rileggi e controlla 1 regola alla volta con l’inserto.</div>
+          <button class="printbtn" type="button" onclick="window.print()">🖨️ Stampa / Salva in PDF</button>
+        </div>
+
+        <p class="muted" style="margin-top:10px">
+          Ultimo aggiornamento: <span id="lastUpdate"></span>
+        </p>
+      </section>
+
+      <section class="card" aria-label="Chiusura">
+        <h2>Pronti a partire?</h2>
+        <p>
+          Scegli una categoria, usa la struttura del modello e costruisci una pagina chiara.
+          Ricorda: <strong>pochi concetti, ben visibili</strong>.
+        </p>
+        <p class="muted">
+          Nota per il docente: se vuoi cambiare l’esempio (pedone/monopattino/motorino), sostituisci il testo nella sezione “Esempio svolto”.
+        </p>
+        <p><a href="#top">⬆️ Torna su</a></p>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script>
+    // Data “amichevole” per la pagina (locale browser)
+    (function(){
+      const el = document.getElementById('lastUpdate');
+      if(!el) return;
+      const d = new Date();
+      el.textContent = d.toLocaleDateString('it-IT', { year:'numeric', month:'long', day:'numeric' });
+    })();
+  </script>
+</body>
+</html>
