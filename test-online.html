@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test online — Educazione stradale</title>
+  <meta name="description" content="Mini-verifica online di Educazione civica: diritti e doveri sulla strada." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#e9ecf5;
+      --muted:#b9c0d9;
+      --accent:#7dd3fc;
+      --good:#34d399;
+      --bad:#fb7185;
+      --line:rgba(233,236,245,.12);
+      --shadow:0 12px 32px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:780px;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--sans); color:var(--text);
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(125,211,252,.18), transparent 60%), var(--bg);
+      line-height:1.55;
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+    header, .card{border:1px solid var(--line); border-radius:var(--radius); background:rgba(18,26,51,.65); box-shadow:var(--shadow)}
+    header{padding:18px}
+    h1{margin:6px 0 8px; font-size:clamp(1.4rem,1.1rem+1.6vw,2rem)}
+    .muted{color:var(--muted)}
+    main{margin-top:16px; display:grid; gap:16px}
+    .card{padding:16px}
+    label{display:block; font-weight:700; margin:10px 0 6px}
+    input[type="text"]{width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:#0e1530; color:var(--text)}
+    .q{margin:14px 0; padding:12px; border:1px dashed var(--line); border-radius:12px}
+    .q strong{display:block; margin-bottom:6px}
+    .opts{display:flex; gap:12px}
+    .opts label{font-weight:600; margin:0}
+    .btn{margin-top:14px; padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:#0e1530; color:var(--text); font-weight:800; cursor:pointer}
+    .btn:hover{transform:translateY(-1px)}
+    .ok{color:var(--good); font-weight:800}
+    .err{color:var(--bad); font-weight:800}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Mini-verifica online — Educazione stradale</h1>
+      <p class="muted">Rispondi alle domande Vero/Falso. Usa un <strong>codice</strong> (es. 2H-07). Nessun nome e cognome.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <form id="quiz">
+          <label for="codice">Codice alunno</label>
+          <input id="codice" name="codice" type="text" placeholder="Es. 2H-07" required />
+
+          <div class="q">
+  <strong>1) Il pedone può attraversare ovunque se non arrivano auto.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q1" value="V" required> Vero</label>
+    <label><input type="radio" name="q1" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>2) Il ciclista deve rispettare semafori e segnali stradali.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q2" value="V" required> Vero</label>
+    <label><input type="radio" name="q2" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>3) Usare il cellulare mentre si guida è sempre consentito.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q3" value="V" required> Vero</label>
+    <label><input type="radio" name="q3" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>4) Sulle strisce pedonali il pedone ha la precedenza.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q4" value="V" required> Vero</label>
+    <label><input type="radio" name="q4" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>5) In bicicletta è vietato trainare altri veicoli.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q5" value="V" required> Vero</label>
+    <label><input type="radio" name="q5" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>6) Il monopattino elettrico può circolare sui marciapiedi senza limiti.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q6" value="V" required> Vero</label>
+    <label><input type="radio" name="q6" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>7) È importante rendersi visibili di sera o con scarsa illuminazione.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q7" value="V" required> Vero</label>
+    <label><input type="radio" name="q7" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>8) Il ciclomotore può trasportare un passeggero solo se omologato.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q8" value="V" required> Vero</label>
+    <label><input type="radio" name="q8" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>9) È consentito circolare contromano se la strada è vuota.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q9" value="V" required> Vero</label>
+    <label><input type="radio" name="q9" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>10) Il casco riduce il rischio di gravi lesioni alla testa.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q10" value="V" required> Vero</label>
+    <label><input type="radio" name="q10" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>11) Attraversare distratti mette a rischio la propria sicurezza.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q11" value="V" required> Vero</label>
+    <label><input type="radio" name="q11" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>12) Le piste ciclabili vanno usate quando presenti.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q12" value="V" required> Vero</label>
+    <label><input type="radio" name="q12" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>13) È vietato guidare sotto l’effetto di alcol o sostanze.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q13" value="V" required> Vero</label>
+    <label><input type="radio" name="q13" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>14) I segnali stradali servono a proteggere tutti gli utenti.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q14" value="V" required> Vero</label>
+    <label><input type="radio" name="q14" value="F"> Falso</label>
+  </div>
+</div>
+
+<div class="q">
+  <strong>15) Rispettare le regole rende la strada più sicura per tutti.</strong>
+  <div class="opts">
+    <label><input type="radio" name="q15" value="V" required> Vero</label>
+    <label><input type="radio" name="q15" value="F"> Falso</label>
+  </div>
+</div>
+
+          <button class="btn" type="submit">Invia risposte</button>
+          <p id="msg" class="muted"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // RISPOSTE CORRETTE (puoi modificarle)
+    const corrette = {
+  q1:'F', q2:'V', q3:'F', q4:'V', q5:'V',
+  q6:'F', q7:'V', q8:'V', q9:'F', q10:'V',
+  q11:'V', q12:'V', q13:'V', q14:'V', q15:'V'
+};
+
+    // URL dell’endpoint Apps Script (LO INSERIREMO DOPO)
+    // Dopo la pubblicazione della Web App, incolla qui l’URL.
+    const ENDPOINT_URL = 'INCOLLA_QUI_URL_APPS_SCRIPT';
+
+    function isEndpointConfigured(url){
+      return url && url !== 'INCOLLA_QUI_URL_APPS_SCRIPT' && /^https:\/\//i.test(url);
+    }
+
+    document.getElementById('quiz').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      // Calcolo punteggio
+      let score = 0;
+      Object.keys(corrette).forEach(k => {
+        if (data.get(k) === corrette[k]) score++;
+      });
+
+      const payload = {
+        codice: String(data.get('codice') || '').trim(),
+        risposte: Object.fromEntries(Object.keys(corrette).map(k => [k, data.get(k)])),
+        punteggio: score
+      };
+
+      const msg = document.getElementById('msg');
+
+      // Feedback immediato (sempre)
+      msg.innerHTML = `<span class="ok">Punteggio: ${score}/15</span> <span class="muted">— invio in corso…</span>`;
+
+      // Se l’endpoint non è ancora configurato, non proviamo a inviare.
+      if (!isEndpointConfigured(ENDPOINT_URL)) {
+        msg.innerHTML = `<span class="ok">Punteggio: ${score}/15</span><br><span class="muted">Salvataggio non attivo: manca l’URL di Apps Script.</span>`;
+        return;
+      }
+
+      // Invio al server (Apps Script)
+      try {
+        const res = await fetch(ENDPOINT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) throw new Error('Errore di rete');
+
+        msg.innerHTML = `<span class="ok">Punteggio: ${score}/15</span><br><span class="ok">Risposte salvate correttamente ✅</span>`;
+        form.reset();
+      } catch (err) {
+        // Mostra comunque il punteggio + stato salvataggio
+        msg.innerHTML = `<span class="ok">Punteggio: ${score}/15</span><br><span class="err">Salvataggio non riuscito. Riprovare.</span>`;
+      }
+    });
+  </script>
+</body>
+</html>
